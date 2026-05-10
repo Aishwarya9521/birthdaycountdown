@@ -1,0 +1,60 @@
+* {
+    margin: 0;  /* Removes default spacing */
+    padding: 0;  /* Removes default padding */
+    box-sizing: border-box; /* Includes padding & border in element size */
+}
+
+body {
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+    font-family: Arial, sans-serif;  /* Sets font style */
+    background: linear-gradient(135deg, #ff373d, #ff7650, #fad0c4);
+    text-align: center;
+    color: #fff !important;
+}
+
+
+h1 {
+    margin-bottom: 20px;    /* Space below heading */
+}
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+}
+
+.countdown {
+    display: flex;  /* Aligns time boxes in row */
+    gap: 15px;     /* Space between boxes */
+    justify-content: center; 
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.2);  /* Semi-transparent background */
+    padding: 20px;  /* Inner spacing */
+    border-radius: 10px;    /* Rounded corners */
+    backdrop-filter: blur(10px);  /* Glass effect */
+}
+    
+
+.time-box:hover {
+    transform: scale(1.1);  /* Slight zoom on hover */
+}
+
+span {
+    font-size: 2em;     /* Large numbers */
+    display: block;     /* Moves text to new line */
+    animation: fadein 1s ease-in-out;   /* Fade animation */
+}
+
+/* Fade animation */
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+small {
+    font-size: 0.8em; /* Smaller label text */
+}
