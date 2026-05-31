@@ -6,32 +6,26 @@
         <title>Birthday Countdown Project</title>       <!-- Title shown in browser tab -->
         <link rel="stylesheet" href="style.css">        <!-- Links to an external CSS file for styling the webpage -->
     </head>
-
     <body>
-        <div class="container">                 <!-- Main container for the content -->
-            <h1 id="title">🎉🎂 HAPPY   BIRTHDAY! 🎂🎉</h1>         <!-- Main heading of the webpage -->
-            <p id="countdown">Waiting for your Special Day..</p> <br><br>           <!-- Paragraph to display the countdown timer -->
+    <div class="fireworks">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
 
-                <div class="countdown">         <!-- Container holding all time units -->
-                    
-                    <div class="time-box">
-                        <small>Days</small>         <!-- Label for the days unit -->
-                        <span id="days">00</span>     <!-- Span to display the number of days left -->
-                    </div> 
-                    <div class="time-box">          <!-- Label for the hours unit -->
-                        <small>Hours</small>           <!-- Label for the hours unit -->
-                        <span id="hours">00</span>
-                    </div>          
-                    <div class="time-box">              <!-- Label for the minutes unit -->
-                        <small>Minutes</small>          <!-- Label for the minutes unit -->
-                        <span id="minutes">00</span>    
-                    </div>
-                    <div class="time-box">              <!-- Label for the seconds unit -->
-                        <small>Seconds</small>          <!-- Label for the seconds unit -->
-                        <span id="seconds">00</span>
-                    </div>
-                </div>
-        </div>  
-        <script src="script.js"></script>             <!-- Links external JavaScript file -->     
+    <div class="container">   <!-- Main container for the content --> 
+        <h1 id="title">🎉🎂 Enter Your Birthdate 🎂🎉</h1>   <!-- Main heading of the webpage -->
+
+        <form id="birthday-form">     <!-- Birthday form -->
+            <input type="text" id="username" placeholder="Enter your name" required>  <!-- Input field for user's name -->
+            <input type="date" id="birthdate" required>  <!-- Input field for user's birthdate -->  
+            <button type="submit"> BEGIN </button>   <!-- Submit button to start the countdown -->      
+        </form>
+    </div>  
+    <script src="script.js"></script>             <!-- Links external JavaScript file -->   
     </body>
 </html>

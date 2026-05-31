@@ -1,21 +1,56 @@
-const birthday = new Date("2026-09-13");    // Creates a date object for the target birthday
+const form = document.getElementById("birthday-form");    // Creates a date object for the target birthday
 
-function updateCountdown() {
-    const now = new Date();     // Gets current date and time
-    const diff = birthday - now;    // Calculates difference in milliseconds
-
-    if (diff <= 0) {
-        document.getElementById("message").innerText = "🎉🎂 HAPPY BIRTHDAY! 🎂🎉";     // Shows birthday message
-        return;     // Stops further execution
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));      // Converts milliseconds to days
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);   // Extracts remaining hours
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);      // Extracts remaining minutes
-    const seconds = Math.floor((diff / 1000) % 60);             // Extracts remaining seconds
-    document.getElementById("days").innerText = days;           // Updates days in HTML
-    document.getElementById("hours").innerText = hours;         // Updates hours
-    document.getElementById("minutes").innerText = minutes;     // Updates minutes
-    document.getElementById("seconds").innerText = seconds;     // Updates seconds
+if(form){
+    form.addEventListener("submit", function(event) {   // Adds event listener for form submission
+        event.preventDefault(); 
+        const birthdate = document.getElementById("birthdate").value;
+        localStorage.setItem("birthdate", birthdate);
+        window.location.href = "countdown.html";
+    });
 }
-setInterval(updateCountdown, 1000);     // Keeps countdown live and updating
+
+const countDownElement = document.getElementById("welcome");
+
+if (countDownElement) {
+
+    const birthdate = localStorage.getItem("birthdate");
+
+    if (!birthdate) {
+        document.getElementById("countdown").innerText =
+            "No birthday selected!";
+    } else {
+
+        const birthday = new Date(birthdate);
+
+        const now = new Date();
+
+        birthday.setFullYear(now.getFullYear());
+
+        if (birthday < now) {
+            birthday.setFullYear(now.getFullYear() + 1);
+        }
+
+        function updateCountdown() {
+
+            const currentTime = new Date();
+
+            const diff = birthday - currentTime;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>                             <!-- Declares the document type and version of HTML (HTML5) -->
+<html lang="en">                            <!-- Root element of the webpage, 'lang' helps browsers and SEO -->
+    <head>                                  <!-- Ensures proper text encoding (supports all characters) -->
+        <meta charset="UTF-8">              <!-- Ensures proper text encoding (supports all characters) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Makes the webpage responsive on different devices --><!-- Makes the page responsive on different devices -->
+        <title>Birthday Countdown Project</title>       <!-- Title shown in browser tab -->
+        <link rel="stylesheet" href="style.css">        <!-- Links to an external CSS file for styling the webpage -->
+    </head>
+    <body>
+    <div class="fireworks">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
+        <div class="container">                 <!-- Main container for the content -->
+            <h1 id="welcome">🎉🎂 Waiting for your Special Day.. 🎂🎉</h1>         <!-- Main heading of the webpage -->
+            
+                <div class="countdown">         <!-- Container holding all time units -->
+                    
+                    <div class="time-box">
+                        <small>Days</small>         <!-- Label for the days unit -->
+                        <span id="days">00</span>     <!-- Span to display the number of days left -->
+                    </div> 
+                    <div class="time-box">          <!-- Label for the hours unit -->
+                        <small>Hours</small>           <!-- Label for the hours unit -->
+                        <span id="hours">00</span>
+                    </div>          
+                    <div class="time-box">              <!-- Label for the minutes unit -->
+                        <small>Minutes</small>          <!-- Label for the minutes unit -->
+                        <span id="minutes">00</span>    
+                    </div>
+                    <div class="time-box">              <!-- Label for the seconds unit -->
+                        <small>Seconds</small>          <!-- Label for the seconds unit -->
+                        <span id="seconds">00</span>
+                    </div>
+                </div>
+        </div>  
+        <script src="script.js"></script>             <!-- Links external JavaScript file -->     
+    </body>
+</html>

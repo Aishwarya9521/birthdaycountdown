@@ -10,13 +10,19 @@ body {
     justify-content: center;  /* Centers horizontally */
     align-items: center;  /* Centers vertically */
     font-family: Arial, sans-serif;  /* Sets font style */
-    background: linear-gradient(135deg, #ff373d, #ff7650, #fad0c4);
+    background: linear-gradient(135deg, #3000a0, #391463, #ffabdf);
+    
     text-align: center;
     color: #fff !important;
 }
 
+.container{
+    border: #202020 solid 2px;
+    background: rgba(24, 24, 24, 0.733);
+    padding: 30px;
+}
 
-h1 {
+h1, h2{
     margin-bottom: 20px;    /* Space below heading */
 }
 
@@ -25,6 +31,156 @@ h1 {
         50% { transform: translateY(-10px); }
 }
 
+/* FIREWORK SECTION */
+
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+.firework {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    animation: explode 2s infinite ease-out;
+}
+
+/* Different positions */
+
+.firework:nth-child(1) {
+    top: 15%;
+    left: 50%;
+    animation-delay: 0s;
+    background: #ff4d6d;
+}
+
+.firework:nth-child(2) {
+    top: 20%;
+    left: 80%;
+    animation-delay: 0.5s;
+    background: #ffd60a;
+}
+
+.firework:nth-child(3) {
+    top: 70%;
+    left: 20%;
+    animation-delay: 1s;
+    background: #00f5d4;
+}
+
+.firework:nth-child(4) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 1.5s;
+    background: #9affa2;
+}
+
+.firework:nth-child(5) {
+    top: 90%;
+    left: 3%;
+    animation-delay: 2s;
+    background: #ff9f1c;
+}
+.firework:nth-child(6) {
+    top:95%;
+    left: 50%;
+    animation-delay: 1s;
+    background: #fa2e83;
+}
+.firework:nth-child(7) {
+    top: 85%;
+    left: 90%;
+    animation-delay: 1s;
+    background: #7405e4;
+}
+
+/* Explosion animation */
+
+@keyframes explode {
+
+    20% {
+        transform: scale(0);
+        opacity: 1;
+        box-shadow:
+            0 0 red,
+            0 0 red,
+            0 0 red,
+            0 0 red,
+            0 0 red,
+            0 0 red;
+            
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+            -40px -40px currentColor,
+            40px -40px currentColor,
+            -40px -40px currentColor,
+            40px -40px currentColor;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 3;
+
+        box-shadow:
+            -80px -80px transparent,
+            80px -80px transparent,
+            -80px 80px transparent,
+            80px 80px transparent;
+    }
+}
+
+/* FORM SECTION */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #3000a0;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3000a0;
+    transform: scale(1.05);
+}
+
+
+/* COUNTDOWN SECTION */
+
 .countdown {
     display: flex;  /* Aligns time boxes in row */
     gap: 15px;     /* Space between boxes */
@@ -32,10 +188,10 @@ h1 {
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.2);  /* Semi-transparent background */
+    background: rgba(250, 249, 249, 0.226);  /* Semi-transparent background */
     padding: 20px;  /* Inner spacing */
     border-radius: 10px;    /* Rounded corners */
-    backdrop-filter: blur(10px);  /* Glass effect */
+    width: 100px;   /* Fixed width for uniformity */
 }
     
 
@@ -58,3 +214,5 @@ span {
 small {
     font-size: 0.8em; /* Smaller label text */
 }
+
+
